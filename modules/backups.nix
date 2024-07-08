@@ -95,9 +95,7 @@ in {
 
       services.duplicity = {
         enable = true;
-        extraFlags = [
-          "--include-filelist" "${filelist}"
-        ];
+        includeFileList = filelist;
         fullIfOlderThan = mkDefault "1M";
         targetUrl = cfg.destination;
         frequency = cfg.frequency;
